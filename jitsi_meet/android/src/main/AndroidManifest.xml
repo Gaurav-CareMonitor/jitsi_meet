@@ -7,7 +7,7 @@
             android:launchMode="singleTask"
             android:resizeableActivity="true"
             android:supportsPictureInPicture="true"
-            android:theme="@style/Theme.AppCompat.Light"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             android:exported="false"
             android:windowSoftInputMode="adjustResize">
         </activity>
