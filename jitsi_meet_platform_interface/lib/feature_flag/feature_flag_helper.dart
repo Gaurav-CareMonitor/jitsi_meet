@@ -21,5 +21,12 @@ class FeatureFlagHelper {
     FeatureFlagEnum.TILE_VIEW_ENABLED: 'tile-view.enabled',
     FeatureFlagEnum.TOOLBOX_ALWAYS_VISIBLE: 'toolbox.alwaysVisible',
     FeatureFlagEnum.WELCOME_PAGE_ENABLED: 'welcomepage.enabled',
+    FeatureFlagEnum.ANDROID_SCREENSHARING_ENABLED:
+        'android.screensharing.enabled',
+    FeatureFlagEnum.isFilmstripEnabled: 'filmstrip.enabled',
+    FeatureFlagEnum.isFullscreenEnabled: 'fullscreen.enabled',
+    FeatureFlagEnum.isHelpButtonEnabled: 'help.enabled',
+    FeatureFlagEnum.isNotificationsEnabled: 'notifications.enabled',
+    FeatureFlagEnum.isToolboxEnabled: 'toolbox.alwaysVisible',
   };
 }
