@@ -1,11 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:jitsi_meet_platform_interface/jitsi_meet_platform_interface.dart';
 
 import 'room_name_constraint.dart';
 import 'room_name_constraint_type.dart';
-
-import 'package:jitsi_meet_platform_interface/jitsi_meet_platform_interface.dart';
 
 export 'package:jitsi_meet_platform_interface/jitsi_meet_platform_interface.dart'
     show
@@ -19,14 +18,12 @@ export 'package:jitsi_meet_platform_interface/jitsi_meet_platform_interface.dart
 class JitsiMeet {
   static bool _hasInitialized = false;
 
-  static final Map<RoomNameConstraintType, RoomNameConstraint>
-      defaultRoomNameConstraints = {
-    RoomNameConstraintType.MIN_LENGTH: new RoomNameConstraint((value) {
+  static final Map<RoomNameConstraintType, RoomNameConstraint> defaultRoomNameConstraints = {
+    RoomNameConstraintType.MIN_LENGTH: RoomNameConstraint((value) {
       return value.trim().length >= 3;
     }, "Minimum room length is 3"),
-    RoomNameConstraintType.ALLOWED_CHARS: new RoomNameConstraint((value) {
-      return RegExp(r"^[a-zA-Z0-9-_]+$", caseSensitive: false, multiLine: false)
-          .hasMatch(value);
+    RoomNameConstraintType.ALLOWED_CHARS: RoomNameConstraint((value) {
+      return RegExp(r"^[a-zA-Z0-9-_]+$", caseSensitive: false, multiLine: false).hasMatch(value);
     }, "Only alphanumeric, dash, and underscore chars allowed"),
   };
 
@@ -34,23 +31,18 @@ class JitsiMeet {
   /// A JitsiMeetingListener can be attached to this meeting that will automatically
   /// be removed when the meeting has ended
   static Future<JitsiMeetingResponse> joinMeeting(JitsiMeetingOptions options,
-      {JitsiMeetingListener? listener,
-      Map<RoomNameConstraintType, RoomNameConstraint>?
-          roomNameConstraints}) async {
+      {JitsiMeetingListener? listener, Map<RoomNameConstraintType, RoomNameConstraint>? roomNameConstraints}) async {
     assert(options.room.trim().isNotEmpty, "room is empty");
 
     // If no constraints given, take default ones
     // (To avoid using constraint, just give an empty Map)
-    if (roomNameConstraints == null) {
-      roomNameConstraints = defaultRoomNameConstraints;
-    }
+    roomNameConstraints ??= defaultRoomNameConstraints;
 
     // Check each constraint, if it exist
     // (To avoid using constraint, just give an empty Map)
     if (roomNameConstraints.isNotEmpty) {
       for (RoomNameConstraint constraint in roomNameConstraints.values) {
-        assert(
-            constraint.checkConstraint(options.room), constraint.getMessage());
+        assert(constraint.checkConstraint(options.room), constraint.getMessage());
       }
     }
 
@@ -60,8 +52,7 @@ class JitsiMeet {
           "URL must be of the format <scheme>://<host>[/path], like https://someHost.com");
     }
 
-    return await JitsiMeetPlatform.instance
-        .joinMeeting(options, listener: listener);
+    return await JitsiMeetPlatform.instance.joinMeeting(options, listener: listener);
   }
 
   /// Initializes the event channel. Call when listeners are added
@@ -101,7 +92,7 @@ class JitsiMeet {
 /// or Javascript embebed code
 class JitsiMeetConferencing extends StatelessWidget {
   final List<String>? extraJS;
-  JitsiMeetConferencing({this.extraJS});
+  const JitsiMeetConferencing({Key? key, this.extraJS}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
