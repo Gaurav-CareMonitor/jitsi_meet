@@ -61,9 +61,11 @@ packages:
   jitsi_meet_platform_interface:
     dependency: "direct main"
     description:
-      path: "../jitsi_meet_platform_interface"
-      relative: true
-    source: path
+      path: jitsi_meet_platform_interface
+      ref: master
+      resolved-ref: ed19420f6624ceb02bcfc8f8c3ef5ae1b325419e
+      url: "https://github.com/Gaurav-CareMonitor/jitsi_meet.git"
+    source: git
     version: "2.0.0"
   js:
     dependency: "direct main"
@@ -106,14 +108,14 @@ packages:
       name: pedantic
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.11.0"
+    version: "1.11.1"
   plugin_platform_interface:
     dependency: transitive
     description:
       name: plugin_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.0"
+    version: "2.1.3"
   sky_engine:
     dependency: transitive
     description: flutter
