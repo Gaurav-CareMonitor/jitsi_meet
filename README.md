@@ -1,6 +1,8 @@
-# jitsi_meet
+# Jitsi Meet
 
-#### Support us using our patreon account. https://www.patreon.com/Gunschu
+## TODO
+Find a way to use `JitsiMeetConferenceOptions` : `welcomePageEnabled`, `subject`, `audioOnly`, `audioMuted`, `videoMuted` in iOS
+https://jitsi.github.io/handbook/docs/dev-guide/dev-guide-ios-sdk/
 
 
 Jitsi Meet Plugin for Flutter. Supports Android, iOS, and Web platforms.
