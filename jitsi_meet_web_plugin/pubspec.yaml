@@ -2,7 +2,9 @@ name: jitsi_meet_web_plugin
 description: Jitsi Meet Web Plugin
 version: 2.0.0
 publish_to: none
-homepage: https://github.com/gunschu/jitsi_meet
+homepage: https://github.com/Gaurav-CareMonitor/jitsi_meet.git
+
+
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -24,7 +26,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  pedantic: ^1.11.0
+  flutter_lints: ^2.0.1
   
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

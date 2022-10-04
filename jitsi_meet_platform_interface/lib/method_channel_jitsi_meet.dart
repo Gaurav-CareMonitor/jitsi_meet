@@ -7,12 +7,12 @@ import 'jitsi_meet_platform_interface.dart';
 
 const MethodChannel _channel = MethodChannel('jitsi_meet');
 
-const EventChannel _eventChannel = const EventChannel('jitsi_meet_events');
+const EventChannel _eventChannel = EventChannel('jitsi_meet_events');
 
 /// An implementation of [JitsiMeetPlatform] that uses method channels.
 class MethodChannelJitsiMeet extends JitsiMeetPlatform {
-  List<JitsiMeetingListener> _listeners = <JitsiMeetingListener>[];
-  Map<String, JitsiMeetingListener> _perMeetingListeners = {};
+  final List<JitsiMeetingListener> _listeners = <JitsiMeetingListener>[];
+  final Map<String, JitsiMeetingListener> _perMeetingListeners = {};
 
   @override
   Future<JitsiMeetingResponse> joinMeeting(
@@ -26,14 +26,13 @@ class MethodChannelJitsiMeet extends JitsiMeetPlatform {
       if (serverURL.endsWith("/")) {
         key = serverURL + options.room;
       } else {
-        key = serverURL + "/" + options.room;
+        key = "$serverURL/${options.room}";
       }
 
-      _perMeetingListeners.update(key, (oldListener) => listener,
-          ifAbsent: () => listener);
+      _perMeetingListeners.update(key, (oldListener) => listener, ifAbsent: () => listener);
       initialize();
     }
-    Map<String, dynamic> _options = {
+    Map<String, dynamic> meetOptions = {
       'room': options.room.trim(),
       'serverURL': options.serverURL?.trim(),
       'subject': options.subject,
@@ -48,13 +47,11 @@ class MethodChannelJitsiMeet extends JitsiMeetPlatform {
     };
 
     return await _channel
-        .invokeMethod<String>('joinMeeting', _options)
-        .then((message) =>
-            JitsiMeetingResponse(isSuccess: true, message: message))
+        .invokeMethod<String>('joinMeeting', meetOptions)
+        .then((message) => JitsiMeetingResponse(isSuccess: true, message: message))
         .catchError(
       (error) {
-        return JitsiMeetingResponse(
-            isSuccess: true, message: error.toString(), error: error);
+        return JitsiMeetingResponse(isSuccess: true, message: error.toString(), error: error);
       },
     );
   }
@@ -96,9 +93,9 @@ class MethodChannelJitsiMeet extends JitsiMeetPlatform {
       _broadcastToPerMeetingListeners(message);
     }, onError: (dynamic error) {
       debugPrint('Jitsi Meet broadcast error: $error');
-      _listeners.forEach((listener) {
+      for (var listener in _listeners) {
         if (listener.onError != null) listener.onError!(error);
-      });
+      }
       _perMeetingListeners.forEach((key, listener) {
         if (listener.onError != null) listener.onError!(error);
       });
@@ -107,22 +104,25 @@ class MethodChannelJitsiMeet extends JitsiMeetPlatform {
 
   /// Sends a broadcast to global listeners added using addListener
   void _broadcastToGlobalListeners(message) {
-    _listeners.forEach((listener) {
+    for (var listener in _listeners) {
       switch (message['event']) {
         case "onConferenceWillJoin":
-          if (listener.onConferenceWillJoin != null)
+          if (listener.onConferenceWillJoin != null) {
             listener.onConferenceWillJoin!(message);
+          }
           break;
         case "onConferenceJoined":
-          if (listener.onConferenceJoined != null)
+          if (listener.onConferenceJoined != null) {
             listener.onConferenceJoined!(message);
+          }
           break;
         case "onConferenceTerminated":
-          if (listener.onConferenceTerminated != null)
+          if (listener.onConferenceTerminated != null) {
             listener.onConferenceTerminated!(message);
+          }
           break;
       }
-    });
+    }
   }
 
   /// Sends a broadcast to per meeting listeners added during joinMeeting
@@ -132,16 +132,19 @@ class MethodChannelJitsiMeet extends JitsiMeetPlatform {
     if (listener != null) {
       switch (message['event']) {
         case "onConferenceWillJoin":
-          if (listener.onConferenceWillJoin != null)
+          if (listener.onConferenceWillJoin != null) {
             listener.onConferenceWillJoin!(message);
+          }
           break;
         case "onConferenceJoined":
-          if (listener.onConferenceJoined != null)
+          if (listener.onConferenceJoined != null) {
             listener.onConferenceJoined!(message);
+          }
           break;
         case "onConferenceTerminated":
-          if (listener.onConferenceTerminated != null)
+          if (listener.onConferenceTerminated != null) {
             listener.onConferenceTerminated!(message);
+          }
 
           // Remove the listener from the map of _perMeetingListeners on terminate
           _perMeetingListeners.remove(listener);
