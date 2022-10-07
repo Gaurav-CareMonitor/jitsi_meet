@@ -62,8 +62,8 @@ packages:
     dependency: "direct main"
     description:
       path: jitsi_meet_platform_interface
-      ref: master
-      resolved-ref: ed19420f6624ceb02bcfc8f8c3ef5ae1b325419e
+      ref: dev
+      resolved-ref: "9ad2f12edcf8c6a53b7ab9aa3eb01b53df16adce"
       url: "https://github.com/Gaurav-CareMonitor/jitsi_meet.git"
     source: git
     version: "2.0.0"
