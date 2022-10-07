@@ -90,17 +90,17 @@ class JitsiMeetPluginActivity : JitsiMeetActivity() {
     
 
     //https://github.com/jitsi/jitsi-meet/blob/master/android/sdk/src/main/java/org/jitsi/meet/sdk/JitsiMeetActivity.java
+
+    //https://github.com/jitsi/jitsi-meet/issues/2797
     override fun onParticipantJoined(data: HashMap<String, Any>) {
         Log.d(JITSI_PLUGIN_TAG, String.format("JitsiMeetPluginActivity.onParticipantJoined: %s", data))
-        //TODO: Implement
-        // JitsiMeetEventStreamHandler.instance.onParticipantJoined(data)
+         JitsiMeetEventStreamHandler.instance.onParticipantJoined(data)
         super.onParticipantJoined(data)
     }
 
     override fun onParticipantLeft(data: HashMap<String, Any>) {
         Log.d(JITSI_PLUGIN_TAG, String.format("JitsiMeetPluginActivity.onParticipantLeft: %s", data))
-        // TODO: Implement
-        // JitsiMeetEventStreamHandler.instance.onParticipantLeft(data)
+        JitsiMeetEventStreamHandler.instance.onParticipantLeft(data)
         super.onParticipantLeft(data)
     }
 

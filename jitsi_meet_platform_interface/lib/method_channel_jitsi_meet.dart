@@ -121,6 +121,14 @@ class MethodChannelJitsiMeet extends JitsiMeetPlatform {
           if (listener.onConferenceTerminated != null)
             listener.onConferenceTerminated!(message);
           break;
+        case "onParticipantJoined":
+          if (listener.onParticipantJoined != null)
+            listener.onParticipantJoined!(message);
+          break;
+        case "onParticipantLeft":
+          if (listener.onParticipantLeft != null)
+            listener.onParticipantLeft!(message);
+          break;
       }
     });
   }
@@ -145,6 +153,14 @@ class MethodChannelJitsiMeet extends JitsiMeetPlatform {
 
           // Remove the listener from the map of _perMeetingListeners on terminate
           _perMeetingListeners.remove(listener);
+          break;
+        case "onParticipantJoined":
+          if (listener.onParticipantJoined != null)
+            listener.onParticipantJoined!(message);
+          break;
+        case "onParticipantLeft":
+          if (listener.onParticipantLeft != null)
+            listener.onParticipantLeft!(message);
           break;
       }
     }

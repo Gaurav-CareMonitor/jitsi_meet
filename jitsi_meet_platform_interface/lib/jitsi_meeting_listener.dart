@@ -16,6 +16,12 @@ class JitsiMeetingListener {
   ///
   final Function(Map<dynamic, dynamic> message)? onPictureInPictureTerminated;
 
+  /// Not Tested on iOS
+  final Function(Map<dynamic, dynamic> message)? onParticipantLeft;
+
+  /// Not Tested on iOS
+  final Function(Map<dynamic, dynamic> message)? onParticipantJoined;
+
   ///
   final Function(dynamic error)? onError;
 
@@ -29,6 +35,8 @@ class JitsiMeetingListener {
       this.onConferenceTerminated,
       this.onPictureInPictureTerminated,
       this.onPictureInPictureWillEnter,
+      this.onParticipantLeft,
+      this.onParticipantJoined,
       this.onError,
       this.genericListeners});
 }
