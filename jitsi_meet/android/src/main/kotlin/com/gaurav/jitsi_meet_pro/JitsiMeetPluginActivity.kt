@@ -1,4 +1,4 @@
-package com.gaurav.jitsi_meet_plus
+package com.gaurav.jitsi_meet_pro
 
 import android.app.KeyguardManager
 import android.content.BroadcastReceiver
@@ -10,8 +10,8 @@ import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.WindowManager
-import com.gaurav.jitsi_meet_plus.JitsiMeetPlugin.Companion.JITSI_MEETING_CLOSE
-import com.gaurav.jitsi_meet_plus.JitsiMeetPlugin.Companion.JITSI_PLUGIN_TAG
+import com.gaurav.jitsi_meet_pro.JitsiMeetPlugin.Companion.JITSI_MEETING_CLOSE
+import com.gaurav.jitsi_meet_pro.JitsiMeetPlugin.Companion.JITSI_PLUGIN_TAG
 import org.jitsi.meet.sdk.JitsiMeetActivity
 import org.jitsi.meet.sdk.JitsiMeetConferenceOptions
 

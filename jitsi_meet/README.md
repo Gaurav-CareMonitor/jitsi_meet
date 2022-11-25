@@ -1,8 +1,5 @@
 # jitsi_meet
 
-#### Support us using our patreon account. https://www.patreon.com/Gunschu
-
-
 Jitsi Meet Plugin for Flutter. Supports Android, iOS, and Web platforms.
 
 "Jitsi Meet is an open-source (Apache) WebRTC JavaScript application that uses Jitsi Videobridge to provide high quality, secure and scalable video conferences." 
@@ -35,7 +32,7 @@ Find more information about Jitsi Meet [here](https://github.com/jitsi/jitsi-mee
 
 <a name="ios"></a>
 ### IOS
-* Note: Example compilable with XCode 12.2 & Flutter 1.22.4.
+* Note: Example compilable with XCode 14 & Flutter 3
 
 #### Podfile
 Ensure in your Podfile you have an entry like below declaring platform of 11.0 or above and disable BITCODE.
@@ -110,7 +107,7 @@ and `tools:replace="android:label"` to the application tag.
 Update your minimum sdk version to 23 in android/app/build.gradle
 ```groovy
 defaultConfig {
-    applicationId "com.gaurav.jitsi_meet_plus_example"
+    applicationId "com.gaurav.jitsi_meet_pro_example"
     minSdkVersion 23 //Required for Jitsi
     targetSdkVersion 28
     versionCode flutterVersionCode.toInteger()

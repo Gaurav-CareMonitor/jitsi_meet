@@ -1,7 +1,7 @@
-package com.gaurav.jitsi_meet_plus
+package com.gaurav.jitsi_meet_pro
 
 import android.util.Log
-import com.gaurav.jitsi_meet_plus.JitsiMeetPlugin.Companion.JITSI_PLUGIN_TAG
+import com.gaurav.jitsi_meet_pro.JitsiMeetPlugin.Companion.JITSI_PLUGIN_TAG
 import io.flutter.plugin.common.EventChannel
 import java.io.Serializable
 

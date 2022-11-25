@@ -1,4 +1,4 @@
-package com.gaurav.jitsi_meet_plus
+package com.gaurav.jitsi_meet_pro
 
 import android.app.Activity
 import android.content.Intent

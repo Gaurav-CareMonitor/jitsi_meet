@@ -28,7 +28,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.gaurav.jitsi_meet_plus
+        package: com.gaurav.jitsi_meet_pro
         pluginClass: JitsiMeetPlugin
       ios:
         pluginClass: JitsiMeetPlugin
