@@ -32,7 +32,7 @@ dependencies:
   flutter:
     sdk: flutter
     
-  jitsi_meet_plus:
+  jitsi_meet_pro:
     path: ../
 
 

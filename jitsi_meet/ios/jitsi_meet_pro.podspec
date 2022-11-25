@@ -1,9 +1,9 @@
 #
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html.
-# Run `pod lib lint jitsi_meet_plus.podspec' to validate before publishing.
+# Run `pod lib lint jitsi_meet_pro.podspec' to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'jitsi_meet_plus'
+  s.name             = 'jitsi_meet_pro'
   s.version          = '0.0.2'
   s.summary          = 'Jitsi Meet Plugin'
   s.description      = <<-DESC

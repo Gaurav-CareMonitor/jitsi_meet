@@ -20,10 +20,10 @@ class JitsiMeet {
 
   static final Map<RoomNameConstraintType, RoomNameConstraint>
       defaultRoomNameConstraints = {
-    RoomNameConstraintType.MIN_LENGTH: new RoomNameConstraint((value) {
+    RoomNameConstraintType.MIN_LENGTH: RoomNameConstraint((value) {
       return value.trim().length >= 3;
     }, "Minimum room length is 3"),
-    RoomNameConstraintType.ALLOWED_CHARS: new RoomNameConstraint((value) {
+    RoomNameConstraintType.ALLOWED_CHARS: RoomNameConstraint((value) {
       return RegExp(r"^[a-zA-Z0-9-_]+$", caseSensitive: false, multiLine: false)
           .hasMatch(value);
     }, "Only alphanumeric, dash, and underscore chars allowed"),
@@ -40,9 +40,7 @@ class JitsiMeet {
 
     // If no constraints given, take default ones
     // (To avoid using constraint, just give an empty Map)
-    if (roomNameConstraints == null) {
-      roomNameConstraints = defaultRoomNameConstraints;
-    }
+    roomNameConstraints ??= defaultRoomNameConstraints;
 
     // Check each constraint, if it exist
     // (To avoid using constraint, just give an empty Map)
@@ -100,7 +98,7 @@ class JitsiMeet {
 /// or Javascript embebed code
 class JitsiMeetConferencing extends StatelessWidget {
   final List<String>? extraJS;
-  JitsiMeetConferencing({this.extraJS});
+  const JitsiMeetConferencing({super.key, this.extraJS});
 
   @override
   Widget build(BuildContext context) {
