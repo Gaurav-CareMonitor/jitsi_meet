@@ -1,3 +1,5 @@
+## 6.2.3
+* Fixed ios
 ## 6.2.2
 * Update Jitsi Meet SDK for Android to 6.2.2.
 * Update Jitsi Meet SDK for iOS to 6.2.2.
