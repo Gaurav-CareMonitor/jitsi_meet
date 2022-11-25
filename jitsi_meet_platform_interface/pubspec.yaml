@@ -1,6 +1,6 @@
 name: jitsi_meet_plus_platform_interface
 description: A common platform interface for the jitsi meet plugin.
-version: 6.2.2
+version: 6.2.3
 homepage: https://github.com/Gaurav-CareMonitor/jitsi_meet
 
 environment:

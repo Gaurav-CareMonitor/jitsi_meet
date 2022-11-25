@@ -1,3 +1,8 @@
+## 6.2.2
+* Update Jitsi Meet SDK for Android to 6.2.2.
+* Update Jitsi Meet SDK for iOS to 6.2.2.
+* Breaking: Null safety support.
+
 ## 4.0.0
 * Update Jitsi Meet SDK for Android to 3.3.0.
 * Update Jitsi Meet SDK for iOS to 3.3.0.
