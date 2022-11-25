@@ -1,26 +1,17 @@
-name: jitsi_meet
+name: jitsi_meet_plus
 description: Jitsi Meet Plugin - A plugin for integrating open source Jitsi Meet API in flutter. Jitsi Meet is secure, fully featured and allows completely free video conferencing made with https://jitsi.org, a collection of open source projects
-version: 4.0.1
-publish_to: none
-homepage: https://github.com/gunschu/jitsi_meet
+version: 6.2.2
+publish_to: https://github.com/Gaurav-CareMonitor/jitsi_meet
+homepage: https://github.com/Gaurav-CareMonitor/jitsi_meet
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
-  flutter: ">=1.10.0"
+  sdk: ">=2.17.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
   jitsi_meet_plus_platform_interface: 
-    git: 
-      url: https://github.com/Gaurav-CareMonitor/jitsi_meet.git
-      path : jitsi_meet_plus_platform_interface/
-      ref: dev
-  jitsi_meet_web_plugin: 
-    git: 
-      url: https://github.com/Gaurav-CareMonitor/jitsi_meet.git
-      path : jitsi_meet_web_plugin/
-      ref: dev
+  jitsi_meet_plus_web: 
 
 dev_dependencies:
   flutter_test:
@@ -43,7 +34,7 @@ flutter:
       ios:
         pluginClass: JitsiMeetPlugin
       web:
-        default_package: jitsi_meet_web_plugin
+        default_package: jitsi_meet_plus_web
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
