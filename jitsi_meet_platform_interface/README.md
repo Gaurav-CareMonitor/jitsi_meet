@@ -1,4 +1,4 @@
-# jitsi_meet_platform_interface
+# jitsi_meet_plus_platform_interface
 
 A plugin interface for Jitsi Plugin
 

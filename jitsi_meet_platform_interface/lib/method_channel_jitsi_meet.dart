@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'jitsi_meet_platform_interface.dart';
+import 'jitsi_meet_plus_platform_interface.dart';
 
 const MethodChannel _channel = MethodChannel('jitsi_meet');
 

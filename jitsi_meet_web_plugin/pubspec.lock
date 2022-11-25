@@ -58,10 +58,10 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  jitsi_meet_platform_interface:
+  jitsi_meet_plus_platform_interface:
     dependency: "direct main"
     description:
-      path: jitsi_meet_platform_interface
+      path: jitsi_meet_plus_platform_interface
       ref: dev
       resolved-ref: "9ad2f12edcf8c6a53b7ab9aa3eb01b53df16adce"
       url: "https://github.com/Gaurav-CareMonitor/jitsi_meet.git"

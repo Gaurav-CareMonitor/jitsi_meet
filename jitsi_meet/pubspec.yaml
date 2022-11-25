@@ -11,10 +11,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  jitsi_meet_platform_interface: 
+  jitsi_meet_plus_platform_interface: 
     git: 
       url: https://github.com/Gaurav-CareMonitor/jitsi_meet.git
-      path : jitsi_meet_platform_interface/
+      path : jitsi_meet_plus_platform_interface/
       ref: dev
   jitsi_meet_web_plugin: 
     git: 

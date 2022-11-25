@@ -200,9 +200,7 @@ class _MeetingState extends State<Meeting> {
                       MaterialStateColor.resolveWith((states) => Colors.blue)),
             ),
           ),
-          SizedBox(
-            height: 48.0,
-          ),
+          SizedBox(height: 48.0),
         ],
       ),
     );

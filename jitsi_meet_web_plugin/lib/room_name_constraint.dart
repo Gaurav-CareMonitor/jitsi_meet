@@ -10,7 +10,7 @@ class RoomNameConstraint {
     _constraintMessage = constraintMessage;
   }
 
-  //// Checker for the constrain
+  /// Checker for the constrain
   bool checkConstraint(String value) {
     return _checkFunction(value);
   }

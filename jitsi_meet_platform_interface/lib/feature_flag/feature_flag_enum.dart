@@ -79,6 +79,6 @@ enum FeatureFlagEnum {
   isHelpButtonEnabled,
 
   isNotificationsEnabled,
-  
+
   isToolboxEnabled,
 }
