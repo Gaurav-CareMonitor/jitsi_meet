@@ -2,20 +2,25 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:jitsi_meet/jitsi_meet.dart';
+import 'package:jitsi_meet_plus/jitsi_meet_plus.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: Meeting());
+    return const MaterialApp(
+        debugShowCheckedModeBanner: false, home: Meeting());
   }
 }
 
 class Meeting extends StatefulWidget {
+  const Meeting({super.key});
+
   @override
-  _MeetingState createState() => _MeetingState();
+  State<Meeting> createState() => _MeetingState();
 }
 
 class _MeetingState extends State<Meeting> {
@@ -62,11 +67,11 @@ class _MeetingState extends State<Meeting> {
               ? Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
+                    SizedBox(
                       width: width * 0.30,
                       child: meetConfig(),
                     ),
-                    Container(
+                    SizedBox(
                         width: width * 0.60,
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
@@ -76,7 +81,7 @@ class _MeetingState extends State<Meeting> {
                                 width: width * 0.60 * 0.70,
                                 height: width * 0.60 * 0.70,
                                 child: JitsiMeetConferencing(
-                                  extraJS: [
+                                  extraJS: const [
                                     // extraJs setup example
                                     '<script>function echo(){console.log("echo!!!")};</script>',
                                     '<script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>'
@@ -96,91 +101,91 @@ class _MeetingState extends State<Meeting> {
     return SingleChildScrollView(
       child: Column(
         children: <Widget>[
-          SizedBox(
+          const SizedBox(
             height: 16.0,
           ),
           TextField(
             controller: serverText,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 labelText: "Server URL",
                 hintText: "Hint: Leave empty for meet.jitsi.si"),
           ),
-          SizedBox(
+          const SizedBox(
             height: 14.0,
           ),
           TextField(
             controller: roomText,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               border: OutlineInputBorder(),
               labelText: "Room",
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 14.0,
           ),
           TextField(
             controller: subjectText,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               border: OutlineInputBorder(),
               labelText: "Subject",
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 14.0,
           ),
           TextField(
             controller: nameText,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               border: OutlineInputBorder(),
               labelText: "Display Name",
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 14.0,
           ),
           TextField(
             controller: emailText,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               border: OutlineInputBorder(),
               labelText: "Email",
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 14.0,
           ),
           TextField(
             controller: iosAppBarRGBAColor,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 labelText: "AppBar Color(IOS only)",
                 hintText: "Hint: This HAS to be in HEX RGBA format"),
           ),
-          SizedBox(
+          const SizedBox(
             height: 14.0,
           ),
           CheckboxListTile(
-            title: Text("Audio Only"),
+            title: const Text("Audio Only"),
             value: isAudioOnly,
             onChanged: _onAudioOnlyChanged,
           ),
-          SizedBox(
+          const SizedBox(
             height: 14.0,
           ),
           CheckboxListTile(
-            title: Text("Audio Muted"),
+            title: const Text("Audio Muted"),
             value: isAudioMuted,
             onChanged: _onAudioMutedChanged,
           ),
-          SizedBox(
+          const SizedBox(
             height: 14.0,
           ),
           CheckboxListTile(
-            title: Text("Video Muted"),
+            title: const Text("Video Muted"),
             value: isVideoMuted,
             onChanged: _onVideoMutedChanged,
           ),
-          Divider(
+          const Divider(
             height: 48.0,
             thickness: 2.0,
           ),
@@ -191,16 +196,16 @@ class _MeetingState extends State<Meeting> {
               onPressed: () {
                 _joinMeeting();
               },
-              child: Text(
-                "Join Meeting",
-                style: TextStyle(color: Colors.white),
-              ),
               style: ButtonStyle(
                   backgroundColor:
                       MaterialStateColor.resolveWith((states) => Colors.blue)),
+              child: const Text(
+                "Join Meeting",
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ),
-          SizedBox(height: 48.0),
+          const SizedBox(height: 48.0),
         ],
       ),
     );

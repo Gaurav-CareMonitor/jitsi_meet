@@ -2,7 +2,6 @@ name: jitsi_meet_plus_web
 description: Jitsi Meet Web Plugin
 
 version: 6.2.2
-publish_to: https://github.com/Gaurav-CareMonitor/jitsi_meet
 homepage: https://github.com/Gaurav-CareMonitor/jitsi_meet
 
 environment:

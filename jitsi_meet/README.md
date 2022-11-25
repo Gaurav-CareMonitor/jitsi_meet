@@ -110,7 +110,7 @@ and `tools:replace="android:label"` to the application tag.
 Update your minimum sdk version to 23 in android/app/build.gradle
 ```groovy
 defaultConfig {
-    applicationId "com.gunschu.jitsi_meet_example"
+    applicationId "com.gaurav.jitsi_meet_plus_example"
     minSdkVersion 23 //Required for Jitsi
     targetSdkVersion 28
     versionCode flutterVersionCode.toInteger()
